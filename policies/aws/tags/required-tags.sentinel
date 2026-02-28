@@ -1,6 +1,5 @@
 # This policy checks that all AWS resources have the required tags.
 
-
 import "tfplan/v2" as tfplan
 
 # List of required tags
