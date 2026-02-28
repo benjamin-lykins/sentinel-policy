@@ -1,0 +1,29 @@
+# This policy checks that all AWS resources have the required tags. 
+
+
+import "tfplan/v2" as tfplan
+
+# List of required tags
+required_tags = [
+    "created_by", 
+    "automate_by", 
+    "contact_dll", 
+    "env", 
+    "mots_id"]
+
+# Filter resources that are missing any of the required tags
+missing_tag_key = filter tfplan.resource_changes as address, rc {
+    rc.provider_name matches "(.*)aws$" and 
+    rc.change.actions is not ["delete"] and
+    rc.change.after contains "tags_all" and
+    any required_tags as tag {
+        rc.change.after.tags_all not contains tag
+    }
+}
+
+# Print resources missing required tags
+print("Resources missing required tags:", missing_tag_key)
+
+main = rule {
+  length(missing_tag_key) == 0
+}
