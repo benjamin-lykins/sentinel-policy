@@ -17,9 +17,9 @@ missing_tag_key = filter tfplan.resource_changes as address, rc {
 	rc.provider_name matches "(.*)aws$" and
 		rc.change.actions is not ["delete"] and
 		rc.change.after contains "tags_all" and
-		any required_tags as tag {
+		(any required_tags as tag {
 			rc.change.after.tags_all not contains tag
-		}
+		})
 }
 
 # Print resources missing required tags
