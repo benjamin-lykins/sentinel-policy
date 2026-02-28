@@ -15,13 +15,13 @@ mock "tfstate/v2" {
 
 mock "tfresources" {
   module {
-    source = "../../../../modules/tfresources/tfresources.sentinel"
+    source = "../../../../../modules/tfresources/tfresources.sentinel"
   }
 }
 
 mock "report" {
   module {
-    source = "../../../../modules/mocks/report/report.sentinel"
+    source = "../../../../../modules/mocks/report/report.sentinel"
   }
 }
 

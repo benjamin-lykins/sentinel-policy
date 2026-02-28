@@ -12,25 +12,25 @@ mock "tfplan/v2" {
 
 mock "tfresources" {
   module {
-    source = "../../../../modules/tfresources/tfresources.sentinel"
+    source = "../../../../../modules/tfresources/tfresources.sentinel"
   }
 }
 
 mock "tfconfig-functions" {
   module {
-    source = "../../../../modules/tfconfig-functions/tfconfig-functions.sentinel"
+    source = "../../../../../modules/tfconfig-functions/tfconfig-functions.sentinel"
   }
 }
 
 mock "tfplan-functions" {
   module {
-    source = "../../../../modules/tfplan-functions/tfplan-functions.sentinel"
+    source = "../../../../../modules/tfplan-functions/tfplan-functions.sentinel"
   }
 }
 
 mock "report" {
   module {
-    source = "../../../../modules/mocks/report/report.sentinel"
+    source = "../../../../../modules/mocks/report/report.sentinel"
   }
 }
 
