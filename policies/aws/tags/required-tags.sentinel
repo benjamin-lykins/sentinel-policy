@@ -5,10 +5,7 @@ import "tfplan/v2" as tfplan
 # List of required tags
 required_tags = [
 	"created_by",
-	"automate_by",
-	"contact_dll",
-	"env",
-	"mots_id",
+	"env"
 ]
 
 # Filter resources that are missing any of the required tags
